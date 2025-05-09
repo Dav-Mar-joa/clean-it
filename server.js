@@ -70,11 +70,13 @@ app.post('/reset', express.urlencoded({ extended: true }), async (req, res) => {
 
 app.post('/commentaires', async (req, res) => {
   console.log("Données reçues dans le formulaire : ", req.body); // Affiche les données reçues
+  const date = new Date().toLocaleString();
+  console.log(date);
   try {
     const nouveauCommentaire = new Commentaires({
       texte: req.body.commentaires,
+      date: date
     });
-      console.log("commentaires : ",req.body.commentaires)
     await nouveauCommentaire.save();
     res.redirect('/');
   } catch (error) {

@@ -96,6 +96,10 @@
     color: var(--primary);
   }
   
+  .commentaire-texte {
+    white-space: pre-wrap; /* Permet les retours à la ligne automatiques */
+    word-wrap: break-word; /* Coupe les mots trop longs */
+  }
   /* Responsive */
   @media (max-width: 600px) {
     body {

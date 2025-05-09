@@ -87,20 +87,32 @@
     /* accent-color: var(--primary); */
   }
 
-  #commentaire {
-    border: 1px solid #ccc; /* Bordure plus douce que du noir */
+#commentaire {
+    border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 1.3rem;
-    text-align: left; /* Alignement du texte à gauche pour plus de lisibilité */
+    text-align: left;
     margin: auto;
     margin-bottom: 1.5rem;
     display: inline-block;
-    width: 90%; /* Assure que le champ occupe toute la largeur disponible de son parent */
-    padding: 0.8rem; /* Ajoute un peu d'espace autour du texte */
-    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
+    width: 90%;
+    padding: 0.8rem;
+    box-sizing: border-box;
     white-space: pre-wrap; /* Permet les retours à la ligne automatiques */
-    word-wrap: break-word; /* Assure que le padding est inclus dans la largeur */
+    word-wrap: break-word; /* Permet de couper le texte à la fin du champ */
+    overflow-wrap: break-word; /* Pour s'assurer que les mots longs ne sortent pas */
+  }
+
+.commentaire-texte {
+    white-space: pre-wrap; /* Permet les retours à la ligne automatiques */
+    word-wrap: break-word; /* Coupe les mots trop longs */
 }
+.commentaire-texte {
+    white-space: pre-wrap; /* Permet les retours à la ligne automatiques */
+    word-wrap: break-word; /* Coupe les mots trop longs */
+    text-align: left;
+}
+  
 
 #commentaire:focus {
     outline: none; /* Enlève le contour par défaut lors du focus */

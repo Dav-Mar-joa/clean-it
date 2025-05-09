@@ -29,14 +29,15 @@ html(lang="fr")
 
       form(method="post", action="/commentaires")
         label(for="commentaires")
-        input#commentaire(type="text" name="commentaires", placeholder="Écrivez ici...")
+        textarea#commentaire(type="text" name="commentaires", placeholder="Écrivez ici...")
         button(type="submit") Ajouter ➕
 
       ul
         if commentaires && commentaires.length
           each commentaire in commentaires
             li
-              |#{commentaire.texte}
+              p.commentaire-date #{commentaire.date}
+              p.commentaire-texte #{commentaire.texte}
               form(method="post", action=`/commentaires/supprimer/${commentaire._id}`, style="display:inline; white-space: nowrap")
                 button(type="submit") ❌ Supprimer
         else
