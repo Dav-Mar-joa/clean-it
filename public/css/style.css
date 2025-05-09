@@ -1,0 +1,143 @@
+:root {
+    --bg-gradient: linear-gradient(135deg, #fef6e4, #f9f9f9);
+    --container-bg: #ffffffcc;
+    --primary: #ff9e9e;
+    --secondary: #8ecae6;
+    --text: #2b2d42;
+    --muted: #adb5bd;
+    --accent: #ffd6a5;
+    --success: #84cc16;
+    --radius: 16px;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--bg-gradient);
+    margin: 0;
+    padding: 2rem 1rem;
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    align-items: flex-start;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 700px;
+    background: var(--container-bg);
+    backdrop-filter: blur(8px);
+    border-radius: var(--radius);
+    padding: 2rem;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  ul {
+    padding: 0;
+    list-style: none;
+    margin: 0;
+  }
+  
+  li {
+    background: white;
+    border: 1px solid var(--accent);
+    border-radius: var(--radius);
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: transform 0.2s;
+  }
+  
+  li:hover {
+    transform: scale(1.02);
+  }
+
+  li.checked {
+    /* background: var(--accent); */
+    accent-color: darkmagenta;
+  }
+  
+  label {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    /* accent-color: var(--primary); */
+  }
+
+  #commentaire{
+    font-size: 1.3rem;
+    text-align: center;
+    margin:0.8rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  button {
+    background: var(--primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: background 0.3s;
+    display: block;
+    margin: 1.5rem auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  button:hover {
+    background: var(--secondary);
+  }
+  
+  a {
+    display: block;
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  
+  a:hover {
+    color: var(--primary);
+  }
+  
+  /* Responsive */
+  @media (max-width: 600px) {
+    h1 {
+      font-size: 1.7rem;
+    }
+  
+    button {
+      width: 100%;
+    }
+  
+    .container {
+      padding: 1.5rem;
+    }
+  }
+  
