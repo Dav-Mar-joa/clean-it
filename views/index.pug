@@ -37,7 +37,7 @@ html(lang="fr")
           each commentaire in commentaires
             li
               |#{commentaire.texte}
-              form(method="post", action=`/commentaires/supprimer/${commentaire._id}`, style="display:inline")
+              form(method="post", action=`/commentaires/supprimer/${commentaire._id}`, style="display:inline; white-space: nowrap")
                 button(type="submit") ❌ Supprimer
         else
           li Aucun commentaire pour le moment.

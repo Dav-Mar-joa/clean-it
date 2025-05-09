@@ -87,12 +87,35 @@
     /* accent-color: var(--primary); */
   }
 
-  #commentaire{
+  #commentaire {
+    border: 1px solid #ccc; /* Bordure plus douce que du noir */
+    border-radius: 8px;
     font-size: 1.3rem;
-    text-align: center;
-    margin:0.8rem;
+    text-align: left; /* Alignement du texte à gauche pour plus de lisibilité */
+    margin: auto;
     margin-bottom: 1.5rem;
-  }
+    display: inline-block;
+    width: 90%; /* Assure que le champ occupe toute la largeur disponible de son parent */
+    padding: 0.8rem; /* Ajoute un peu d'espace autour du texte */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
+    white-space: pre-wrap; /* Permet les retours à la ligne automatiques */
+    word-wrap: break-word; /* Assure que le padding est inclus dans la largeur */
+}
+
+#commentaire:focus {
+    outline: none; /* Enlève le contour par défaut lors du focus */
+    border-color: #4CAF50; /* Change la bordure lors du focus */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
+    white-space: pre-wrap; /* Permet les retours à la ligne automatiques */
+    word-wrap: break-word; /* Assure que le padding est inclus dans la largeur */
+}
+
+#commentaire::placeholder {
+    color: #aaa; /* Change la couleur du placeholder pour une meilleure visibilité */
+    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
+    white-space: pre-wrap; /* Permet les retours à la ligne automatiques */
+    word-wrap: break-word; /* Assure que le padding est inclus dans la largeur */
+}
   
   button {
     background: var(--primary);
