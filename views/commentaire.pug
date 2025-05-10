@@ -1,0 +1,36 @@
+doctype html
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Checklist
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="manifest", href="/manifest.json")
+    script(src="/js/app.js")
+  body
+    .container
+      h2 Commentaires
+
+      form(method="post", action="/commentaires")
+        label(for="commentaires")
+        textarea#commentaire(type="text" name="commentaires", placeholder="Écrivez ici...")
+        select(id="avatar" name="avatar" class="listeDeroulante")
+          option(value="pictures/anonyme.jpg") Qui parle ?? 
+          option(value="pictures/lola.PNG") Lola
+          option(value="pictures/roseline.jpg") Roseline
+        button(type="submit") ➕ Ajouter 
+
+      ul
+        if commentaires && commentaires.length
+          each commentaire in commentaires
+            li
+              .date-avatar
+                img.avatar(src=commentaire.avatar alt="pas d'images")
+                p.commentaire-date #{commentaire.date}
+              p.commentaire-texte #{commentaire.texte}
+              form(method="post", action=`/commentaires/supprimer/${commentaire._id}`, style="display:inline; white-space: nowrap")
+                button(type="submit", style="margin-bottom:0.1rem") ❌ Supprimer
+        else
+          li Aucun commentaire pour le moment.
+
+        

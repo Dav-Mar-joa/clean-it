@@ -1,0 +1,25 @@
+doctype html
+html(lang="fr")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Checklist
+    link(rel="stylesheet", href="/css/style.css")
+    link(rel="manifest", href="/manifest.json")
+    script(src="/js/app.js")
+  body
+    .container
+      h1 🧹 Checklist de l'Happy Clean 🧹
+      ul
+        if checklist && checklist.length
+          each item in checklist
+            li
+              form(method="post", action=`/toggle/${item._id}`)
+                label(style=`background-color: ${item.done ? '#fcd6f6' : 'none'}`)
+                  input(type="checkbox", checked=item.done, onchange="this.form.submit()")
+                  | #{item.texte}
+        else
+          li Aucune tâche pour le moment.
+      form(method="post" action="/reset")
+        button(type="submit") 🔄 Réinitialiser tout
+      
