@@ -178,6 +178,8 @@
     width:4rem;
     border: 1px solid black;
     border-radius: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ombre légère */
+    transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .papierToilette {
@@ -185,6 +187,8 @@
     border: 1px solid black;
     border-radius: 1rem;
     margin-left: 6rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ombre légère */
+    transition: transform 0.2s, box-shadow 0.2s;
   }
 
   .listeDeroulante {
@@ -197,6 +201,7 @@
     background-color: #c5def6;
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
+     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
   }
 
   .date-avatar {
@@ -224,10 +229,12 @@
   margin-bottom: 1.5rem;
   width: 70%;
   transition: background-color 0.3s;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
 }
 
   .toggle-btn:hover {
     background-color: #c5def6;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
   }
 
   .toggle-content {
