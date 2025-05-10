@@ -29,47 +29,47 @@ html(lang="fr")
       button(class="toggle-btn") Inventaire
       .toggle-content
         form(method="post", action="/inventaire")
-        .inventaire
-          img.papierToilette(src="pictures/papierToilettes.PNG" alt="pas d'images")
-          select(id="papierToilette", name="papierToilette", class="listeDeroulante", onchange="this.form.submit()")
-            option(value="0", selected=(inventaire.length > 0 && inventaire[0].papierToilette == "0")) 0
-            option(value="1", selected=(inventaire.length > 0 && inventaire[0].papierToilette == "1")) 1
-            option(value="2", selected=(inventaire.length > 0 && inventaire[0].papierToilette == "2")) 2
-            option(value="3", selected=(inventaire.length > 0 && inventaire[0].papierToilette == "3")) 3
-            option(value="4", selected=(inventaire.length > 0 && inventaire[0].papierToilette == "4")) 4
-            option(value="5", selected=(inventaire.length > 0 && inventaire[0].papierToilette == "5")) 5  
+          .inventaire
+            img.papierToilette(src="pictures/papierToilettes.PNG" alt="pas d'images")
+            select(id="papierToilette", name="papierToilette", class="listeDeroulante", onchange="this.form.submit()")
+              option(value="0", selected=(inventaire.length > 0 && inventaire[0].papierToilette == "0")) 0
+              option(value="1", selected=(inventaire.length > 0 && inventaire[0].papierToilette == "1")) 1
+              option(value="2", selected=(inventaire.length > 0 && inventaire[0].papierToilette == "2")) 2
+              option(value="3", selected=(inventaire.length > 0 && inventaire[0].papierToilette == "3")) 3
+              option(value="4", selected=(inventaire.length > 0 && inventaire[0].papierToilette == "4")) 4
+              option(value="5", selected=(inventaire.length > 0 && inventaire[0].papierToilette == "5")) 5  
 
-        .inventaire
-          img.papierToilette(src="pictures/drapBleuJaune.jpg" alt="drapBleuJaune")
-          select(id="drapBleuJaune", name="drapBleuJaune", class="listeDeroulante", onchange="this.form.submit()")
-            option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapBleuJaune == "villejuif")) VilleJuif
-            option(value="pantin", selected=(inventaire.length > 0 && inventaire[0].drapBleuJaune == "pantin")) Pantin
-            option(value="saint-michel", selected=(inventaire.length > 0 && inventaire[0].drapBleuJaune == "saint-michel")) Saint-Michel
-    
-        .inventaire
-          img.papierToilette(src="pictures/drapSatin.jpg" alt="drapSatin")
-          select(id="drapSatin", name="drapSatin", class="listeDeroulante", onchange="this.form.submit()")
-            option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "villejuif")) VilleJuif
-            option(value="pantin", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "pantin")) Pantin
-            option(value="saint-michel", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "saint-michel")) Saint-Michel
+          .inventaire
+            img.papierToilette(src="pictures/drapBleuJaune.jpg" alt="drapBleuJaune")
+            select(id="drapBleuJaune", name="drapBleuJaune", class="listeDeroulante", onchange="this.form.submit()")
+              option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapBleuJaune == "villejuif")) VilleJuif
+              option(value="pantin", selected=(inventaire.length > 0 && inventaire[0].drapBleuJaune == "pantin")) Pantin
+              option(value="saint-michel", selected=(inventaire.length > 0 && inventaire[0].drapBleuJaune == "saint-michel")) Saint-Michel
+      
+          .inventaire
+            img.papierToilette(src="pictures/drapSatin.jpg" alt="drapSatin")
+            select(id="drapSatin", name="drapSatin", class="listeDeroulante", onchange="this.form.submit()")
+              option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "villejuif")) VilleJuif
+              option(value="pantin", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "pantin")) Pantin
+              option(value="saint-michel", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "saint-michel")) Saint-Michel
 
-        .inventaire
-          img.papierToilette(src="pictures/drapFleuris.jpeg" alt="drapFleuris")
-          select(id="drapFleuris", name="drapFleuris", class="listeDeroulante", onchange="this.form.submit()")
-            option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "villejuif")) VilleJuif
-            option(value="pantin", selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "pantin")) Pantin
-            option(value="saint-michel", selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "saint-michel")) Saint-Michel   
+          .inventaire
+            img.papierToilette(src="pictures/drapFleuris.jpeg" alt="drapFleuris")
+            select(id="drapFleuris", name="drapFleuris", class="listeDeroulante", onchange="this.form.submit()")
+              option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "villejuif")) VilleJuif
+              option(value="pantin", selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "pantin")) Pantin
+              option(value="saint-michel", selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "saint-michel")) Saint-Michel   
 
 
-        .inventaire
-          img.papierToilette(src="pictures/serviette.jpg" alt="pas d'images")
-          select(id="serviette", name="serviette", class="listeDeroulante", onchange="this.form.submit()")
-            option(value="0", selected=(inventaire.length > 0 && inventaire[0].serviette == "0")) 0
-            option(value="1", selected=(inventaire.length > 0 && inventaire[0].serviette == "1")) 1
-            option(value="2", selected=(inventaire.length > 0 && inventaire[0].serviette == "2")) 2
-            option(value="3", selected=(inventaire.length > 0 && inventaire[0].serviette == "3")) 3
-            option(value="4", selected=(inventaire.length > 0 && inventaire[0].serviette == "4")) 4
-            option(value="5", selected=(inventaire.length > 0 && inventaire[0].serviette == "5")) 5 
+          .inventaire
+            img.papierToilette(src="pictures/serviette.jpg" alt="pas d'images")
+            select(id="serviette", name="serviette", class="listeDeroulante", onchange="this.form.submit()")
+              option(value="0", selected=(inventaire.length > 0 && inventaire[0].serviette == "0")) 0
+              option(value="1", selected=(inventaire.length > 0 && inventaire[0].serviette == "1")) 1
+              option(value="2", selected=(inventaire.length > 0 && inventaire[0].serviette == "2")) 2
+              option(value="3", selected=(inventaire.length > 0 && inventaire[0].serviette == "3")) 3
+              option(value="4", selected=(inventaire.length > 0 && inventaire[0].serviette == "4")) 4
+              option(value="5", selected=(inventaire.length > 0 && inventaire[0].serviette == "5")) 5 
             
       //- h2 Commentaires
       button(class="toggle-btn") Commentaires
@@ -95,5 +95,26 @@ html(lang="fr")
                   button(type="submit", style="margin-bottom:0.1rem") ❌ Supprimer
           else
             li Aucun commentaire pour le moment.
+  //- script.
+  //-   document.querySelectorAll('.listeDeroulante').forEach(select => {
+  //-     select.addEventListener('change', function () {
+  //-       const form = this.form;
+  //-       const selects = form.querySelectorAll('select');
+
+  //-       // Supprimer les inputs hidden précédents
+  //-       form.querySelectorAll('input[type="hidden"]').forEach(i => i.remove());
+
+  //-       // Recréer tous les champs visibles sous forme de champs hidden
+  //-       selects.forEach(s => {
+  //-         const hidden = document.createElement('input');
+  //-         hidden.type = 'hidden';
+  //-         hidden.name = s.name;
+  //-         hidden.value = s.value;
+  //-         form.appendChild(hidden);
+  //-       });
+
+  //-       form.submit();
+  //-     });
+  //-   });         
 
         
