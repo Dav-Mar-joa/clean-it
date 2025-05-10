@@ -272,5 +272,12 @@
     padding-top: 0.2rem;
     padding-bottom: 0.2rem;
   }
+
+    .inventaire{
+    display: flex;
+    align-items: center; /* aligne verticalement au centre */
+    gap: 1.2rem;
+    margin-bottom: 1rem;
+  }
   }
   
