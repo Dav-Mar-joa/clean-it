@@ -75,7 +75,7 @@
 
   label {
   background-color: transparent;
-  transition: background-color 0.8s ease; /* Animation douce */
+  transition: background-color 0.1s ease; /* Animation douce */
   padding: 0.5em 1em;
   border-radius: 5px;
   display: inline-block;
