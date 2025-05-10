@@ -66,6 +66,7 @@ app.post('/commentaires', async (req, res) => {
   dateFormated=dateFormated[0];
   dateFormated=dateFormated.split("/")
   dateFormated=dateFormated[1]+" / "+dateFormated[0]+" / "+dateFormated[2]
+  dateFormated=dateFormated.replace(",","")
   try {
     const nouveauCommentaire = new Commentaires({
       texte: req.body.commentaires,
