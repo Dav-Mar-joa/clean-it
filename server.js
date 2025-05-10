@@ -20,30 +20,19 @@ app.use('/checklist', checklistRoutes); // <- ici on change le point de montage
 
 const ChecklistItem = require('./models/Checklist');
 const Commentaires = require('./models/Commentaires');
-
-// Route principale
-// app.get('/', async (req, res) => {
-//   try {
-//     const checklist = await ChecklistItem.find();
-//     // console.log("------------- ", checklist);
-//     res.render('index', { checklist: checklist || [] });
-//   } catch (error) {
-//     console.error('Erreur lors du chargement de la checklist :', error);
-//     res.render('index', { checklist: [] });
-//   }
-// });
+const Inventaire =  require('./models/Inventaire');
 
 app.get('/', async (req, res) => {
   try {
     const checklist = await ChecklistItem.find();
-    const commentaires = await Commentaires.find();  // Récupère les commentaires
-    res.render('index', { checklist: checklist || [], commentaires: commentaires || [] });
+    const commentaires = await Commentaires.find(); 
+    const inventaire = await Inventaire.find();  
+    res.render('index', { checklist: checklist || [], commentaires: commentaires || [], inventaire: inventaire || []  });
   } catch (error) {
     console.error('Erreur lors du chargement de la checklist :', error);
-    res.render('index', { checklist: [], commentaires: [] });
+    res.render('index', { checklist: [], commentaires: [], inventaire: [] });
   }
 });
-
 
 // Route POST pour cocher/décocher un item
 app.post('/toggle/:id', express.urlencoded({ extended: true }), async (req, res) => {
@@ -72,15 +61,55 @@ app.post('/commentaires', async (req, res) => {
   console.log("Données reçues dans le formulaire : ", req.body); // Affiche les données reçues
   const date = new Date().toLocaleString();
   console.log(date);
+  let dateFormated=date.split(" ")
+  console.log("date formated : ",dateFormated)
+  dateFormated=dateFormated[0];
+  dateFormated=dateFormated.split("/")
+  dateFormated=dateFormated[1]+" / "+dateFormated[0]+" / "+dateFormated[2]
   try {
     const nouveauCommentaire = new Commentaires({
       texte: req.body.commentaires,
-      date: date
+      date: dateFormated,
+      avatar:req.body.avatar
     });
     await nouveauCommentaire.save();
     res.redirect('/');
   } catch (error) {
     console.error('Erreur lors de l\'ajout d\'un commentaire :', error);
+    res.redirect('/');
+  }
+});
+
+app.post('/inventaire', async (req, res) => {
+  const papierToilette = req.body.papierToilette;
+  const drapBleuJaune = req.body.drapBleuJaune;
+  const drapSatin = req.body.drapSatin;
+  const drapFleuris = req.body.drapFleuris;
+  const serviette = req.body.serviette;
+
+  try {
+    let doc = await Inventaire.findOne(); // suppose qu’il n’y a qu’un document
+
+    if (doc) {
+      doc.papierToilette = papierToilette;
+      doc.drapBleuJaune = drapBleuJaune;
+      doc.drapSatin = drapSatin;
+      doc.drapFleuris = drapFleuris;
+      doc.serviette = serviette;
+      await doc.save();
+    } else {
+      await Inventaire.create({
+        papierToilette,
+        drapBleuJaune,
+        drapSatin,
+        drapFleuris,
+        serviette
+      });
+    }
+
+    res.redirect('/');
+  } catch (error) {
+    console.error("Erreur lors de la sauvegarde de l'inventaire :", error);
     res.redirect('/');
   }
 });
@@ -104,8 +133,6 @@ app.post('/commentaires/supprimer/:id', async (req, res) => {
     res.redirect('/');  // En cas d'erreur, redirige quand même vers la page principale
   }
 });
-
-
 
 const PORT = process.env.PORT;
 app.listen(PORT, () => console.log(`Serveur lancé sur le port ${PORT}`));

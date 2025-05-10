@@ -84,7 +84,6 @@
   input[type="checkbox"] {
     width: 1.2rem;
     height: 1.2rem;
-    /* accent-color: var(--primary); */
   }
 
 #commentaire {
@@ -132,7 +131,7 @@
   button {
     background: var(--primary);
     color: white;
-    padding: 0.75rem 1.5rem;
+    padding: 0.75rem 0.8rem;
     font-size: 1rem;
     border: none;
     border-radius: var(--radius);
@@ -160,6 +159,44 @@
   a:hover {
     color: var(--primary);
   }
+
+  .avatar {
+    width:4rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+  }
+
+  .papierToilette {
+    width:4rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin-left: 6rem;
+  }
+
+  .listeDeroulante {
+    text-align:center; 
+    width:30%; display:block; 
+    margin:20px auto; 
+    margin-top:0px;
+    font-size:1.2rem;
+    border-radius:0.5rem;
+    background-color: #c5def6;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
+  }
+
+  .date-avatar {
+    display: flex;
+    align-items: center; /* aligne verticalement au centre */
+    gap: 2rem;
+  }
+
+    .inventaire{
+    display: flex;
+    align-items: center; /* aligne verticalement au centre */
+    gap: 2rem;
+    margin-bottom: 1rem;
+  }
   
   /* Responsive */
   @media (max-width: 600px) {
@@ -174,5 +211,12 @@
     .container {
       padding: 1.5rem;
     }
+
+    .papierToilette {
+    width:4rem;
+    border: 1px solid black;
+    border-radius: 1rem;
+    margin-left: 2rem;
+  }
   }
   
