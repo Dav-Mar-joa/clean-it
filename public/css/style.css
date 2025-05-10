@@ -263,10 +263,10 @@
 
   .listeDeroulante {
     text-align:center; 
-    width:60%; display:block; 
+    width:65%; display:block; 
     margin:20px auto; 
     margin-top:0px;
-    font-size:1.2rem;
+    font-size:1.1rem;
     border-radius:0.5rem;
     background-color: #c5def6;
     padding-top: 0.2rem;
