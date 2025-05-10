@@ -175,7 +175,7 @@
 
   .listeDeroulante {
     text-align:center; 
-    width:60%; display:block; 
+    width:40%; display:block; 
     margin:20px auto; 
     margin-top:0px;
     font-size:1.2rem;
@@ -191,12 +191,40 @@
     gap: 2rem;
   }
 
-    .inventaire{
+  .inventaire{
     display: flex;
     align-items: center; /* aligne verticalement au centre */
     gap: 2rem;
     margin-bottom: 1rem;
   }
+.toggle-btn {
+  display: block;
+  margin: 10px auto;  /* marge automatique à gauche et à droite pour centrer */
+  padding: 10px;
+  background-color: #fcd6f6;
+  border: 1px solid #373333;
+  color: #373333 ;
+  cursor: pointer;
+  font-size: 1.4rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  width: 70%;
+  transition: background-color 0.3s;
+}
+
+  .toggle-btn:hover {
+    background-color: #ddd;
+  }
+
+  .toggle-content {
+    display: none; /* Masque par défaut le contenu */
+    padding-left: 20px;
+  }
+
+  .toggle-content.active {
+    display: block; /* Affiche le contenu si la classe 'active' est ajoutée */
+  }
+
   
   /* Responsive */
   @media (max-width: 600px) {
@@ -217,6 +245,18 @@
     border: 1px solid black;
     border-radius: 1rem;
     margin-left: 2rem;
+  }
+
+  .listeDeroulante {
+    text-align:center; 
+    width:60%; display:block; 
+    margin:20px auto; 
+    margin-top:0px;
+    font-size:1.2rem;
+    border-radius:0.5rem;
+    background-color: #c5def6;
+    padding-top: 0.2rem;
+    padding-bottom: 0.2rem;
   }
   }
   

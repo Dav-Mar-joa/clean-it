@@ -21,18 +21,50 @@ app.use('/checklist', checklistRoutes); // <- ici on change le point de montage
 const ChecklistItem = require('./models/Checklist');
 const Commentaires = require('./models/Commentaires');
 const Inventaire =  require('./models/Inventaire');
+const UserSettings = require('./models/UserSettings'); 
 
 app.get('/', async (req, res) => {
   try {
     const checklist = await ChecklistItem.find();
     const commentaires = await Commentaires.find(); 
-    const inventaire = await Inventaire.find();  
-    res.render('index', { checklist: checklist || [], commentaires: commentaires || [], inventaire: inventaire || []  });
+    const inventaire = await Inventaire.find(); 
+    const userSettings = await UserSettings.find(); 
+    res.render('index', { checklist: checklist || [], commentaires: commentaires || [], inventaire: inventaire || [], userSettings: userSettings || {}   });
   } catch (error) {
     console.error('Erreur lors du chargement de la checklist :', error);
     res.render('index', { checklist: [], commentaires: [], inventaire: [] });
   }
 });
+
+app.post('/updateUserSettings', async (req, res) => {
+  try {
+    const {ongletMénageVisible, ongletInventaireVisible, ongletCommentairesVisible } = req.body;
+    
+    let userSettings = await UserSettings.find();
+
+    if (!userSettings) {
+      // Si les paramètres de l'utilisateur n'existent pas, les créer
+      userSettings = new UserSettings({
+
+        ongletMénageVisible,
+        ongletInventaireVisible,
+        ongletCommentairesVisible
+      });
+    } else {
+      // Mettre à jour les paramètres existants
+      userSettings.ongletMénageVisible = ongletMénageVisible;
+      userSettings.ongletInventaireVisible = ongletInventaireVisible;
+      userSettings.ongletCommentairesVisible = ongletCommentairesVisible;
+    }
+
+    await userSettings.save();
+    res.send('Settings updated successfully');
+  } catch (error) {
+    console.error('Erreur lors de la mise à jour des paramètres de l\'utilisateur :', error);
+    res.status(500).send('Erreur serveur');
+  }
+});
+
 
 // Route POST pour cocher/décocher un item
 app.post('/toggle/:id', express.urlencoded({ extended: true }), async (req, res) => {
