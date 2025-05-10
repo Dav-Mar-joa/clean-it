@@ -55,6 +55,7 @@ html(lang="fr")
             option(value="pantin", selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "pantin")) Pantin
             option(value="saint-michel", selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "saint-michel")) Saint-Michel   
 
+
         .inventaire
           img.papierToilette(src="pictures/serviette.jpg" alt="pas d'images")
           select(id="serviette", name="serviette", class="listeDeroulante", onchange="this.form.submit()")
