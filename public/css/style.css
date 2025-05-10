@@ -72,6 +72,20 @@
     /* background: var(--accent); */
     accent-color: darkmagenta;
   }
+
+  label {
+  background-color: transparent;
+  transition: background-color 0.8s ease; /* Animation douce */
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.checked-label {
+  background-color: #fcd6f6;
+}
+
   
   label {
     display: flex;

@@ -18,7 +18,7 @@ html(lang="fr")
             each item in checklist
               li
                 form(method="post", action=`/toggle/${item._id}`)
-                  label(style=`background-color: ${item.done ? '#fcd6f6' : 'none'}`)
+                  label(style=`background-color: ${item.done ? '#fcd6f6' : 'transparent'}`)
                     input(type="checkbox", checked=item.done, onchange="this.form.submit()")
                     | #{item.texte}
           else
