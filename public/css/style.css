@@ -1,290 +1,262 @@
 :root {
-    --bg-gradient: linear-gradient(135deg, #fef6e4, #f9f9f9);
-    --container-bg: #ffffffcc;
-    --primary: #ff9e9e;
-    --secondary: #8ecae6;
-    --text: #2b2d42;
-    --muted: #adb5bd;
-    --accent: #ffd6a5;
-    --success: #84cc16;
-    --radius: 16px;
-  }
-  
-  * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    background: var(--bg-gradient);
-    margin: 0;
-    padding: 1rem 1rem;
-    color: var(--text);
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
-    align-items: flex-start;
-  }
-  
-  .container {
-    width: 90%;
-    max-width: 700px;
-    background: var(--container-bg);
-    backdrop-filter: blur(8px);
-    border-radius: var(--radius);
-    padding: 2rem;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
-    font-size: 2.2rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
+  --bg-gradient: linear-gradient(135deg, #fef6e4, #f9f9f9);
+  --container-bg: rgba(255, 255, 255, 0.85);
+  --primary: #ff9e9e;
+  --secondary: #8ecae6;
+  --text: #2b2d42;
+  --muted: #adb5bd;
+  --accent: #ffd6a5;
+  --success: #84cc16;
+  --radius: 16px;
+  --shadow-light: rgba(0, 0, 0, 0.08);
+  --shadow-dark: rgba(0, 0, 0, 0.1);
+  --hover-bg: rgba(255, 255, 255, 0.5);
+}
 
-  h2 {
-    font-size: 1.7rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-  }
-  
-  ul {
-    padding: 0;
-    list-style: none;
-    margin: 0;
-  }
-  
-  li {
-    background: white;
-    border: 1px solid var(--accent);
-    border-radius: var(--radius);
-    padding: 1rem;
-    margin-bottom: 1rem;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: transform 0.2s;
-  }
-  
-  li:hover {
-    transform: scale(1.02);
-  }
+* {
+  box-sizing: border-box;
+}
 
-  li.checked {
-    /* background: var(--accent); */
-    accent-color: darkmagenta;
-  }
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-gradient);
+  margin: 0;
+  padding: 1rem;
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  align-items: flex-start;
+}
 
-  label {
-  background-color: transparent;
-  transition: background-color 0.1s ease; /* Animation douce */
+.container {
+  width: 90%;
+  max-width: 700px;
+  background: var(--container-bg);
+  backdrop-filter: blur(8px);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 8px 30px var(--shadow-dark);
+}
+
+h1, h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2.2rem;
+}
+
+h2 {
+  font-size: 1.7rem;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+}
+
+li {
+  background: white;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px var(--shadow-light);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px var(--shadow-dark);
+}
+
+li.checked {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+label {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
   padding: 0.5em 1em;
   border-radius: 5px;
-  display: inline-block;
-  cursor: pointer;
+  background-color: transparent;
 }
 
 .checked-label {
   background-color: #fcd6f6;
 }
 
-  
-  label {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-  }
-  
-  input[type="checkbox"] {
-    width: 1.2rem;
-    height: 1.2rem;
-  }
+input[type="checkbox"] {
+  width: 1.2rem;
+  height: 1.2rem;
+}
 
 #commentaire {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1rem;
-    text-align: left;
-    margin: auto;
-    margin-bottom: 1.5rem;
-    display: inline-block;
-    width: 90%;
-    padding: 0.8rem;
-    box-sizing: border-box;
-    white-space: pre-wrap; /* Permet les retours à la ligne automatiques */
-    word-wrap: break-word; /* Permet de couper le texte à la fin du champ */
-    overflow-wrap: break-word; /* Pour s'assurer que les mots longs ne sortent pas */
-  }
-
-.commentaire-texte {
-    white-space: pre-wrap; /* Permet les retours à la ligne automatiques */
-    word-wrap: break-word; /* Coupe les mots trop longs */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  text-align: left;
+  margin: auto;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  width: 90%;
+  padding: 0.8rem;
+  box-sizing: border-box;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  transition: border-color 0.3s, box-shadow 0.3s;
 }
-.commentaire-texte {
-    white-space: pre-wrap; /* Permet les retours à la ligne automatiques */
-    word-wrap: break-word; /* Coupe les mots trop longs */
-    text-align: left;
-}
-  
 
 #commentaire:focus {
-    outline: none; /* Enlève le contour par défaut lors du focus */
-    border-color: #4CAF50; /* Change la bordure lors du focus */
-    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
-    white-space: pre-wrap; /* Permet les retours à la ligne automatiques */
-    word-wrap: break-word; /* Assure que le padding est inclus dans la largeur */
+  outline: none;
+  border-color: #4CAF50;
+  box-shadow: 0 0 8px rgba(72, 221, 96, 0.6);
 }
 
 #commentaire::placeholder {
-    color: #aaa; /* Change la couleur du placeholder pour une meilleure visibilité */
-    box-sizing: border-box; /* Assure que le padding est inclus dans la largeur */
-    white-space: pre-wrap; /* Permet les retours à la ligne automatiques */
-    word-wrap: break-word; /* Assure que le padding est inclus dans la largeur */
+  color: #aaa;
 }
-  
-  button {
-    background: var(--primary);
-    color: white;
-    padding: 0.75rem 0.8rem;
-    font-size: 1rem;
-    border: none;
-    border-radius: var(--radius);
-    cursor: pointer;
-    transition: background 0.3s;
-    display: block;
-    margin: 1.5rem auto;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
-  button:hover {
-    background: var(--secondary);
-  }
-  
-  a {
-    display: block;
-    text-align: center;
-    margin-top: 2rem;
-    color: var(--text);
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-  
-  a:hover {
-    color: var(--primary);
-  }
 
-  .avatar {
-    width:4rem;
-    border: 1px solid black;
-    border-radius: 1rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ombre légère */
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
+button {
+  background: var(--primary);
+  color: white;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s ease;
+  display: block;
+  margin: 1.5rem auto;
+  box-shadow: 0 4px 12px var(--shadow-light);
+}
 
-  .papierToilette {
-    width:4rem;
-    border: 1px solid black;
-    border-radius: 1rem;
-    margin-left: 6rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* ombre légère */
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
+button:hover {
+  background: var(--secondary);
+  transform: scale(1.05);
+  box-shadow: 0 6px 18px var(--shadow-dark);
+}
 
-  .listeDeroulante {
-    text-align:center; 
-    width:40%; display:block; 
-    margin:20px auto; 
-    margin-top:0px;
-    font-size:1.2rem;
-    border-radius:0.5rem;
-    background-color: #c5def6;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
-     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-  }
+a {
+  display: block;
+  text-align: center;
+  margin-top: 2rem;
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
 
-  .date-avatar {
-    display: flex;
-    align-items: center; /* aligne verticalement au centre */
-    gap: 2rem;
-  }
+a:hover {
+  color: var(--primary);
+}
 
-  .inventaire{
-    display: flex;
-    align-items: center; /* aligne verticalement au centre */
-    gap: 2rem;
-    margin-bottom: 1rem;
-  }
+.avatar {
+  width: 4rem;
+  border: 1px solid black;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px var(--shadow-light);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px var(--shadow-dark);
+}
+
+.papierToilette {
+  width: 4rem;
+  border: 1px solid black;
+  border-radius: 1rem;
+  margin-left: 6rem;
+  box-shadow: 0 4px 8px var(--shadow-light);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.listeDeroulante {
+  text-align: center;
+  width: 40%;
+  display: block;
+  margin: 20px auto;
+  font-size: 1.2rem;
+  border-radius: 0.5rem;
+  background-color: #c5def6;
+  padding-top: 0.2rem;
+  padding-bottom: 0.2rem;
+  box-shadow: 0 3px 6px var(--shadow-light);
+}
+
+.date-avatar, .inventaire {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
 .toggle-btn {
   display: block;
-  margin: 10px auto;  /* marge automatique à gauche et à droite pour centrer */
+  margin: 10px auto;
   padding: 10px;
   background-color: #fcd6f6;
   border: 1px solid #373333;
-  color: #373333 ;
+  color: #373333;
   cursor: pointer;
   font-size: 1.4rem;
   text-align: center;
   margin-bottom: 1.5rem;
   width: 70%;
   transition: background-color 0.3s;
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 3px 8px var(--shadow-light);
 }
 
-  .toggle-btn:hover {
-    background-color: #c5def6;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+.toggle-btn:hover {
+  background-color: #c5def6;
+  box-shadow: 0 5px 10px var(--shadow-dark);
+}
+
+.toggle-content {
+  display: none;
+  padding-left: 20px;
+}
+
+.toggle-content.active {
+  display: block;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 1.7rem;
   }
 
-  .toggle-content {
-    display: none; /* Masque par défaut le contenu */
-    padding-left: 20px;
+  button {
+    width: 100%;
   }
 
-  .toggle-content.active {
-    display: block; /* Affiche le contenu si la classe 'active' est ajoutée */
+  .container {
+    padding: 1.5rem;
   }
 
-  
-  /* Responsive */
-  @media (max-width: 600px) {
-    h1 {
-      font-size: 1.7rem;
-    }
-  
-    button {
-      width: 100%;
-    }
-  
-    .container {
-      padding: 1.5rem;
-    }
-
-    .papierToilette {
-    width:4rem;
+  .papierToilette {
+    width: 4rem;
     border: 1px solid black;
     border-radius: 1rem;
     margin-left: 0.5rem;
   }
 
   .listeDeroulante {
-    text-align:center; 
-    width:65%; display:block; 
-    margin:20px auto; 
-    margin-top:0px;
-    font-size:1.1rem;
-    border-radius:0.5rem;
-    background-color: #c5def6;
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
+    width: 65%;
+    font-size: 1.1rem;
   }
 
-    .inventaire{
-    display: flex;
-    align-items: center; /* aligne verticalement au centre */
+  .inventaire {
     gap: 1.2rem;
-    margin-bottom: 1rem;
   }
-  }
-  
+}
