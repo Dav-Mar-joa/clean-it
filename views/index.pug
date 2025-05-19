@@ -51,7 +51,7 @@ html(lang="fr")
             img.papierToilette(src="pictures/drapSatin.jpg" alt="drapSatin")
             select(id="drapSatin", name="drapSatin", class=["listeDeroulante", (inventaire.length > 0 && inventaire[0].drapSatin == "villeJuifEnCours" ? "rouge" : "")], onchange="this.form.submit()")
               option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "villejuif")) Villejuif
-              option(value="villeJuifEnCours" style="background:red;text-decoration: line-through;" selected=(inventaire.length > 0 && inventaire[0].drapSatin == "villeJuifEnCours")) VilleJuif (en cours)
+              option(value="villeJuifEnCours" style="background:red;text-decoration: line-through;" selected=(inventaire.length > 0 && inventaire[0].drapSatin == "villeJuifEnCours")) Villejuif (en cours)
               option(value="pantin", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "pantin")) Pantin
               option(value="saint-michel", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "saint-michel")) Saint-Michel
 
