@@ -231,6 +231,14 @@ a:hover {
   display: block;
 }
 
+select.listeDeroulante.rouge {
+  background-color: #ffcccc; /* fond rose clair */
+  color: red;                /* texte rouge */
+  border: 2px solid red;     /* bordure rouge */
+  font-weight: bold;
+}
+
+
 @media (max-width: 600px) {
   h1 {
     font-size: 1.7rem;

@@ -41,22 +41,25 @@ html(lang="fr")
 
           .inventaire
             img.papierToilette(src="pictures/drapBleuJaune.jpg" alt="drapBleuJaune")
-            select(id="drapBleuJaune", name="drapBleuJaune", class="listeDeroulante", onchange="this.form.submit()")
-              option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapBleuJaune == "villejuif")) VilleJuif
+            select(id="drapBleuJaune", name="drapBleuJaune", class=["listeDeroulante", (inventaire.length > 0 && inventaire[0].drapBleuJaune == "villeJuifEnCours" ? "rouge" : "")], onchange="this.form.submit()")
+              option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapBleuJaune == "villejuif")) Villejuif
+              option(value="villeJuifEnCours" style="background:red;text-decoration: line-through;" selected=(inventaire.length > 0 && inventaire[0].drapBleuJaune == "villeJuifEnCours")) Villejuif (en cours)
               option(value="pantin", selected=(inventaire.length > 0 && inventaire[0].drapBleuJaune == "pantin")) Pantin
               option(value="saint-michel", selected=(inventaire.length > 0 && inventaire[0].drapBleuJaune == "saint-michel")) Saint-Michel
       
           .inventaire
             img.papierToilette(src="pictures/drapSatin.jpg" alt="drapSatin")
-            select(id="drapSatin", name="drapSatin", class="listeDeroulante", onchange="this.form.submit()")
-              option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "villejuif")) VilleJuif
+            select(id="drapSatin", name="drapSatin", class=["listeDeroulante", (inventaire.length > 0 && inventaire[0].drapSatin == "villeJuifEnCours" ? "rouge" : "")], onchange="this.form.submit()")
+              option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "villejuif")) Villejuif
+              option(value="villeJuifEnCours" style="background:red;text-decoration: line-through;" selected=(inventaire.length > 0 && inventaire[0].drapSatin == "villeJuifEnCours")) VilleJuif (en cours)
               option(value="pantin", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "pantin")) Pantin
               option(value="saint-michel", selected=(inventaire.length > 0 && inventaire[0].drapSatin == "saint-michel")) Saint-Michel
 
           .inventaire
             img.papierToilette(src="pictures/drapFleuris.jpeg" alt="drapFleuris")
-            select(id="drapFleuris", name="drapFleuris", class="listeDeroulante", onchange="this.form.submit()")
-              option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "villejuif")) VilleJuif
+            select(id="drapFleuris", name="drapFleuris", class=["listeDeroulante", (inventaire.length > 0 && inventaire[0].drapFleuris == "villeJuifEnCours" ? "rouge" : "")], onchange="this.form.submit()")
+              option(value="villeJuif", selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "villejuif")) Villejuif
+              option(value="villeJuifEnCours" style="background:red" selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "villeJuifEnCours")) Villejuif (en cours)
               option(value="pantin", selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "pantin")) Pantin
               option(value="saint-michel", selected=(inventaire.length > 0 && inventaire[0].drapFleuris == "saint-michel")) Saint-Michel   
 
